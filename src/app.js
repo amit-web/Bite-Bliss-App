@@ -13,8 +13,12 @@ app.use(cors({
 app.use(express.json());
 
 const authRouter = require("./routes/auth");
+const restaurentRouter = require("./routes/restaurents.js");
 
 app.use("/",authRouter);
+app.use("/",restaurentRouter);
+
+
 
 connectDB()
   .then(() => {
