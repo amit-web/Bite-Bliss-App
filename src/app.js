@@ -14,9 +14,11 @@ app.use(express.json());
 
 const authRouter = require("./routes/auth");
 const restaurentRouter = require("./routes/restaurents.js");
+const cartRouter = require("./routes/cart.js");
 
 app.use("/",authRouter);
 app.use("/",restaurentRouter);
+app.use("/",cartRouter);
 
 
 

@@ -33,4 +33,19 @@ router.post("/restaurants", async (req, res) => {
   }
 });
 
+router.get("/restaurants", async (req, res) => {
+  try {
+    const restaurants = await Restaurant.find({});
+    res.status(200).json({
+      message: "Restaurants fetched successfully",
+      restaurants,
+    });
+  } catch (err) {
+    console.error("Error fetching restaurants:", err);
+    res.status(500).json({ error: "Failed to fetch restaurants" });
+  }
+});
+
+
+
 module.exports = router;
